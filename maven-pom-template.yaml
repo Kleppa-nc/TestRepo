@@ -1,19 +1,25 @@
 parameters:
 - name: mavenPomFile
   type: string
-  deafult: 'pom.xml'
+  default: 'pom.xml'
 - name: mavenOptions
   type: string
+  default: '-Xmx3072m'
 - name: javaHomeOptions
   type: string
+  default: '-JDKVersion'
 - name: jdkVersionOption
   type: string
+  default: '1.11'
 - name: jdkArchitectureOption
   type: string
+  default: 'x64'
 - name: publishJUnitResults
   type: boolean
+  default: true
 - name: testResultsFiles
   type: string
+  default:  '**/surefire-reports/TEST-*.xml'
 
 jobs:
   - job:
