@@ -1,7 +1,5 @@
-
 trigger:
 - master
-
 
 stages:
   - stage: build
