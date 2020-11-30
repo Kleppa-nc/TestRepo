@@ -33,4 +33,4 @@ parameters:
       goals: 'package'
 
   - task: Testing
-      script: echo 'done
+      script: echo 'done'
