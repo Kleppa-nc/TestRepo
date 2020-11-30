@@ -12,7 +12,7 @@ pool:
   
 steps:
  - task: Maven@3
-    inputs:
+   inputs:
       mavenPomFile: 'pom.xml'
       mavenOptions: '-Xmx3072m'
       javaHomeOption: 'JDKVersion'
@@ -33,7 +33,6 @@ steps:
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'install'
   - task: Maven@3
-  
     inputs:
       mavenPomFile: 'pom.xml'
       mavenOptions: '-Xmx3072m'
