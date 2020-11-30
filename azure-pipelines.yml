@@ -2,9 +2,6 @@ trigger:
   - master
   - main
 
-
-
-
 extends:
   template: maven-pom-template.yaml
 
