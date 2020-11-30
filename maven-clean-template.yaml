@@ -29,7 +29,7 @@ jobs:
           mavenPomFile: ${{parameters.mavenPomFile}}
           mavenOptions: ${{parameters.mavenOptions}}
           javaHomeOption: '-JDKVersion'
-          jdkVersionOption: ${{parameters.jdkVersionOption}}
+          jdkVersionOption: '1.11'
           jdkArchitectureOption: 'x64'
           publishJUnitResults: true
           testResultsFiles: '**/surefire-reports/TEST-*.xml'
