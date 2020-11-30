@@ -3,6 +3,9 @@ trigger:
   - main
 pool:
   vmImage: 'ubuntu-latest'
-extends:
-  template: maven-clean-template.yaml
+
+steps:
+  - template: maven-clean-template.yaml
+  - template: maven-install-template.yaml
+  - template: maven-package-template.yaml
 
