@@ -1,6 +1,7 @@
 parameters:
 - name: mavenPomFile
   type: string
+  default: 'pom.xml'
 
 jobs:
   - job:
