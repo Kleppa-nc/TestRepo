@@ -8,7 +8,7 @@ parameters:
     default: '-Xmx3072m'
   - name: javaHomeOptions
     type: string
-    default: '-JDKVersion'
+    default: 'JDKVersion'
   - name: jdkVersionOption
     type: string
     default: '1.11'
@@ -29,8 +29,8 @@ jobs:
         inputs:
           mavenPomFile: ${{parameters.mavenPomFile}}
           mavenOptions: ${{parameters.mavenOptions}}
-          javaHomeOption: 'JDKVersion'
-          jdkVersionOption: '1.11'
+          javaHomeOption: ${{parameters.javaHomeOptions}}
+          jdkVersionOption: ${{parameters.jdkVersionOption}}
           jdkArchitectureOption: 'x64'
           publishJUnitResults: true
           testResultsFiles: '**/surefire-reports/TEST-*.xml'
