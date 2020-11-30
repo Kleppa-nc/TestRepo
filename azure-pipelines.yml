@@ -6,6 +6,7 @@ extends:
   template: azure-template.yaml
 trigger:
 - master
+- test
 
 pool:
   vmImage: 'ubuntu-latest'
