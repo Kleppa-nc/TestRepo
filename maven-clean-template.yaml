@@ -21,6 +21,7 @@ parameters:
   type: string
   default:  '**/surefire-reports/TEST-*.xml'
 
+
 jobs:
   - job:
     steps:
