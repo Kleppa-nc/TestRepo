@@ -20,7 +20,7 @@ parameters:
   - name: testResultsFiles
     type: string
     default:  '**/surefire-reports/TEST-*.xml'
-
+steps:
   - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
