@@ -1,6 +1,9 @@
 extends:
   template: maven-pom-template.yaml
+  parameter:
+    mavenPomFile: 'pom.xml'
   
+
 trigger:
 - master
 - main
