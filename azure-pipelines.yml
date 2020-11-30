@@ -1,9 +1,7 @@
 trigger:
 - master
 - main
-extends:
-  template: maven-pom-template.yaml
-  
+
 pool:
   vmImage: 'ubuntu-latest'
 
