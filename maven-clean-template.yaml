@@ -31,7 +31,7 @@ jobs:
           mavenOptions: ${{parameters.mavenOptions}}
           javaHomeOption: ${{parameters.javaHomeOptions}}
           jdkVersionOption: ${{parameters.jdkVersionOption}}
-          jdkArchitectureOption: 'x64'
-          publishJUnitResults: true
-          testResultsFiles: '**/surefire-reports/TEST-*.xml'
+          jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
+          publishJUnitResults: ${{parameters.publishJUnitResults}}
+          testResultsFiles: ${{parameters.testResultsFiles}}
           goals: 'clean'
