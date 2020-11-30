@@ -28,9 +28,9 @@ jobs:
         inputs:
           mavenPomFile: ${{parameters.mavenPomFile}}
           mavenOptions: ${{parameters.mavenOptions}}
-          javaHomeOption: '1.11'
-          jdkVersionOption: ${{parameters.jdkVersionOption}}
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: '1.11'
           jdkArchitectureOption: 'x64'
-          publishJUnitResults: ${{parameters.publishJUnitResults}}
-          testResultsFiles: ${{parameters.testResultsFiles}}
+          publishJUnitResults: true
+          testResultsFiles: '**/surefire-reports/TEST-*.xml'
           goals: 'clean'
