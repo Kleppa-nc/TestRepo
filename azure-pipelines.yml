@@ -1,13 +1,11 @@
 trigger:
 - master
 - main
-
-pool:
-  vmImage: 'ubuntu-latest'
-  #check build
-  
 extends:
   template: maven-pom-template.yaml
+  
+pool:
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: Maven@3
