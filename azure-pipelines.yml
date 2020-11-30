@@ -4,13 +4,15 @@ trigger:
 - main
 
 
-  
+
 extends:
   template: maven-pom-template.yaml
-jobs:
-  - job: build maven
+stages:
+  - stage: build
+    jobs:
     pool:
-    vmImage: 'ubuntu-latest'
+      vmImage: 'ubuntu-latest'
+      - job: build maven
     steps:
     - task: Maven@3
       inputs:
