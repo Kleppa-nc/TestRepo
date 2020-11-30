@@ -5,6 +5,9 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
   #check build
+  
+extends: maven-pom-template.yaml
+
 steps:
 - task: Maven@3
   inputs:
