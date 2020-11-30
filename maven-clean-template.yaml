@@ -5,7 +5,7 @@ parameters:
 - name: mavenOptions
   type: string
   default: '-Xmx3072m'
-- name: javaHomeOptions
+- name: javaHomeOption
   type: string
   default: '-JDKVersion'
 - name: jdkVersionOption
