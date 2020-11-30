@@ -21,17 +21,13 @@ parameters:
   - name: testResultsFiles
     type: string
     default:  '**/surefire-reports/TEST-*.xml'
-
-jobs:
-  - job:
-    steps:
-      - task: Maven@3
-        inputs:
-          mavenPomFile: ${{parameters.mavenPomFile}}
-          mavenOptions: ${{parameters.mavenOptions}}
-          javaHomeOption: ${{parameters.javaHomeOptions}}
-          jdkVersionOption: ${{parameters.jdkVersionOption}}
-          jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
-          publishJUnitResults: ${{parameters.publishJUnitResults}}
-          testResultsFiles: ${{parameters.testResultsFiles}}
-          goals: 'package'
+- task: Maven@3
+  inputs:
+    mavenPomFile: ${{parameters.mavenPomFile}}
+    mavenOptions: ${{parameters.mavenOptions}}
+    javaHomeOption: ${{parameters.javaHomeOptions}}
+    jdkVersionOption: ${{parameters.jdkVersionOption}}
+    jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
+    publishJUnitResults: ${{parameters.publishJUnitResults}}
+    testResultsFiles: ${{parameters.testResultsFiles}}
+    goals: 'package'
