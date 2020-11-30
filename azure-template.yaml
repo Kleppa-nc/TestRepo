@@ -2,13 +2,8 @@ parameters:
   - name: userpool
   type: string
   default: Azure Pipelines
-  values:
-  - Azure Pipelines
-  - private-pool-1
-  - private-pool-2
   
   steps:
-  - script: echo "testing"
   - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
