@@ -11,7 +11,7 @@ stages:
       - job: FirstJob
         pool:
           vmImage: 'ubuntu-latest'
-          template: maven-pom-template.yaml
+        - template: maven-pom-template.yaml
         steps:
           - task: Maven@3
             inputs:
