@@ -30,7 +30,7 @@ jobs:
           mavenOptions: ${{parameters.mavenOptions}}
           javaHomeOption: '1.11'
           jdkVersionOption: ${{parameters.jdkVersionOption}}
-          jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
+          jdkArchitectureOption: 'x64'
           publishJUnitResults: ${{parameters.publishJUnitResults}}
           testResultsFiles: ${{parameters.testResultsFiles}}
           goals: 'clean'
