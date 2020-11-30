@@ -2,21 +2,25 @@ trigger:
   - master
   - main
 
-pool:
-  vmImage: 'ubuntu-latest'
 
-extends:
-  template: maven-pom-template.yaml
 
-steps:
-  - task: Maven@3
-    inputs:
-      mavenPomFile: 'pom.xml'
-      mavenOptions: '-Xmx3072m'
-      javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.11'
-      jdkArchitectureOptio n: 'x64'
-      publishJUnitResults: true
-      testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      goals: 'package'
+stages:
+  - stage: First
+    displayName: FirstStage
+    jobs:
+      - job: FirstJob
+        pool:
+          vmImage: 'ubuntu-latest'
+          template: maven-pom-template.yaml
+      steps:
+        - task: Maven@3
+          inputs:
+            mavenPomFile: 'pom.xml'
+            mavenOptions: '-Xmx3072m'
+            javaHomeOption: 'JDKVersion'
+            jdkVersionOption: '1.11'
+            jdkArchitectureOptio n: 'x64'
+            publishJUnitResults: true
+            testResultsFiles: '**/surefire-reports/TEST-*.xml'
+            goals: 'package'
 
