@@ -23,7 +23,7 @@ parameters:
     default:  '**/surefire-reports/TEST-*.xml'
 
 
-- task: Maven@3
+task: Maven@3
   inputs:
     mavenPomFile: ${{parameters.mavenPomFile}}
     mavenOptions: ${{parameters.mavenOptions}}
