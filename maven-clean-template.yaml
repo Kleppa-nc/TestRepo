@@ -1,35 +1,36 @@
+
 parameters:
-- name: mavenPomFile
-  type: string
-  default: 'pom.xml'
-- name: mavenOptions
-  type: string
-  default: '-Xmx3072m'
-- name: javaHomeOption
-  type: string
-  default: '-JDKVersion'
-- name: jdkVersionOption
-  type: string
-  default: '1.11'
-- name: jdkArchitectureOption
-  type: string
-  default: 'x64'
-- name: publishJUnitResults
-  type: boolean
-  default: true
-- name: testResultsFiles
-  type: string
-  default:  '**/surefire-reports/TEST-*.xml'
+  - name: mavenPomFile
+    type: string
+    default: 'pom.xml'
+  - name: mavenOptions
+    type: string
+    default: '-Xmx3072m'
+  - name: javaHomeOptions
+    type: string
+    default: '-JDKVersion'
+  - name: jdkVersionOption
+    type: string
+    default: '1.11'
+  - name: jdkArchitectureOption
+    type: string
+    default: 'x64'
+  - name: publishJUnitResults
+    type: boolean
+    default: true
+  - name: testResultsFiles
+    type: string
+    default:  '**/surefire-reports/TEST-*.xml'
 
 jobs:
   - job:
     steps:
       - task: Maven@3
         inputs:
-          mavenPomFile: 'pom.xml'
-          mavenOptions: '-Xmx3072m'
-          javaHomeOption: '-JDKVersion'
-          jdkVersionOption: 'x64'
+          mavenPomFile: ${{parameters.mavenPomFile}}
+          mavenOptions: ${{parameters.mavenOptions}}
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: '1.11'
           jdkArchitectureOption: 'x64'
           publishJUnitResults: true
           testResultsFiles: '**/surefire-reports/TEST-*.xml'
