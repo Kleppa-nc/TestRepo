@@ -29,7 +29,7 @@ parameters:
       jdkVersionOption: '1.11'
       jdkArchitectureOption: 'x64'
       publishJUnitResults: true
-      testResultsFiles: '**/surefire-reports/TEST-*.xml''
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
 
   - task: Testing
