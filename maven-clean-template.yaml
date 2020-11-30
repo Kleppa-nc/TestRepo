@@ -28,7 +28,7 @@ jobs:
         inputs:
           mavenPomFile: ${{parameters.mavenPomFile}}
           mavenOptions: ${{parameters.mavenOptions}}
-          javaHomeOption: ${{parameters.javaHomeOption}}
+          javaHomeOption: '1.11'
           jdkVersionOption: ${{parameters.jdkVersionOption}}
           jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
           publishJUnitResults: ${{parameters.publishJUnitResults}}

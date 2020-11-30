@@ -4,5 +4,5 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 extends:
-  template: maven-pom-template.yaml
+  template: maven-clean-template.yaml
 
