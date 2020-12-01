@@ -22,13 +22,12 @@ parameters:
     type: string
     default:  '**/surefire-reports/TEST-*.xml'
 
-stages:
-  - stage: test
-    jobs:
-      - job: test
-        steps:
-          - script: echo testdemo
-        displayName: 'templateTest'
+
+jobs:
+  - job: mvnclean
+    steps:
+      - script: echo testdemo
+    displayName: 'templateTest'
 
 
 #stages:
