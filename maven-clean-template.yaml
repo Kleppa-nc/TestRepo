@@ -23,6 +23,7 @@ parameters:
     default:  '**/surefire-reports/TEST-*.xml'
 
 
+
 jobs:
   - job: mvnclean
     steps:
@@ -36,13 +37,3 @@ jobs:
           publishJUnitResults: ${{parameters.publishJUnitResults}}
           testResultsFiles: ${{parameters.testResultsFiles}}
           goals: 'clean'
-
-
-
-#stages:
-#  - stage: clean
-#    jobs:
-#      - job: mvnclean
-#        pool:
-#          vmImage: 'ubuntu-latest'
-#        steps:

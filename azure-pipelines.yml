@@ -5,10 +5,13 @@ trigger:
 stages:
   - stage: clean
     jobs:
-      - template: maven-clean-template.yaml # Template reference
+        - template: maven-clean-template.yaml # Template reference
+        - template: maven-install-template.yaml
 
 
-#stages:
+
+
+  #stages:
   #- stage: stage1
   #  jobs:
   #    - job: job1

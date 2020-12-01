@@ -21,15 +21,20 @@ parameters:
   - name: testResultsFiles
     type: string
     default:  '**/surefire-reports/TEST-*.xml'
-
-steps:
-  - task:
-    inputs:
-      mavenPomFile: ${{parameters.mavenPomFile}}
-      mavenOptions: ${{parameters.mavenOptions}}
-      javaHomeOption: ${{parameters.javaHomeOptions}}
-      jdkVersionOption: ${{parameters.jdkVersionOption}}
-      jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
-      publishJUnitResults: ${{parameters.publishJUnitResults}}
-      testResultsFiles: ${{parameters.testResultsFiles}}
-      goals: 'install'
+  - name: dependsOn
+    type: string
+    default: 'mvnclean'
+jobs:
+  - job: mvninstall
+    dependsOn: ${{parameters.dependsOn}}
+    steps:
+      - task: Maven@3
+        inputs:
+          mavenPomFile: ${{parameters.mavenPomFile}}
+          mavenOptions: ${{parameters.mavenOptions}}
+          javaHomeOption: ${{parameters.javaHomeOptions}}
+          jdkVersionOption: ${{parameters.jdkVersionOption}}
+          jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
+          publishJUnitResults: ${{parameters.publishJUnitResults}}
+          testResultsFiles: ${{parameters.testResultsFiles}}
+          goals: 'install'
