@@ -9,3 +9,4 @@ stages:
         - template: maven-clean-template.yaml # Template reference
         - template: maven-install-template.yaml
         - template: maven-package-template.yaml
+  - stage: deploy_artifact
