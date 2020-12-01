@@ -7,22 +7,4 @@ stages:
     jobs:
         - template: maven-clean-template.yaml # Template reference
         - template: maven-install-template.yaml
-
-
-
-
-  #stages:
-  #- stage: stage1
-  #  jobs:
-  #    - job: job1
-  #      steps:
-  #      - bash: pwd
-  #
-  #    - template: template1.yml  # Template reference
-  #      parameters:
-  #        param: 'val1'
-  #
-  #    - job: job2
-  #      dependsOn: mytemplateJob
-  #      steps:
-  #        - bash: pwd
+        - template: maven-package-template.yaml
