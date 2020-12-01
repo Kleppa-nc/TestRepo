@@ -1,13 +1,14 @@
 trigger:
   - master
   - main
-
-jobs:
-  - job: build
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
-    - template: maven-clean-template.yaml
-    - template: maven-install-template.yaml
-    - template: maven-package-template.yaml
+  pool:
+    vmImage: 'ubuntu-latest'
+stages:
+  - stage: cleaninstallpack
+    jobs:
+      - job: build
+        steps:
+        - template: maven-clean-template.yaml
+        - template: maven-install-template.yaml
+        - template: maven-package-template.yaml
 
