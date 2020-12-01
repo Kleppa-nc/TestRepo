@@ -3,7 +3,7 @@ trigger:
   - main
 
 stages:
-  - stage: create artifact
+  - stage: create_artifact
     displayName: Maven clean install package
     jobs:
         - template: maven-clean-template.yaml # Template reference
