@@ -22,12 +22,11 @@ parameters:
     type: string
     default:  '**/surefire-reports/TEST-*.xml'
   - name: dependsOn
-      type: string
-      default: 'mvninstall'
+    type: string
+    default: 'mvninstall'
 
 jobs:
   - job: mvnpackage
-    displayName: Maven package
     dependsOn: ${{parameters.dependsOn}}
     steps:
       - task: Maven@3
