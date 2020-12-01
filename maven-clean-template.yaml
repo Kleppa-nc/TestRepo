@@ -26,8 +26,17 @@ parameters:
 jobs:
   - job: mvnclean
     steps:
-      - script: echo testdemo
-    displayName: 'templateTest'
+      - task: Maven@3
+        inputs:
+          mavenPomFile: ${{parameters.mavenPomFile}}
+          mavenOptions: ${{parameters.mavenOptions}}
+          javaHomeOption: ${{parameters.javaHomeOptions}}
+          jdkVersionOption: ${{parameters.jdkVersionOption}}
+          jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
+          publishJUnitResults: ${{parameters.publishJUnitResults}}
+          testResultsFiles: ${{parameters.testResultsFiles}}
+          goals: 'clean'
+
 
 
 #stages:
@@ -37,13 +46,3 @@ jobs:
 #        pool:
 #          vmImage: 'ubuntu-latest'
 #        steps:
-#        - task: Maven@3
-#          inputs:
-#            mavenPomFile: ${{parameters.mavenPomFile}}
-#            mavenOptions: ${{parameters.mavenOptions}}
-#            javaHomeOption: ${{parameters.javaHomeOptions}}
-#            jdkVersionOption: ${{parameters.jdkVersionOption}}
-#            jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
-#            publishJUnitResults: ${{parameters.publishJUnitResults}}
-#            testResultsFiles: ${{parameters.testResultsFiles}}
-#            goals: 'clean'
