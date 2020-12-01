@@ -23,19 +23,28 @@ parameters:
     default:  '**/surefire-reports/TEST-*.xml'
 
 stages:
-  - stage: clean
+  - stage: test
     jobs:
-      - job: mvnclean
-        pool:
-          vmImage: 'ubuntu-latest'
+      - job: test
         steps:
-        - task: Maven@3
-          inputs:
-            mavenPomFile: ${{parameters.mavenPomFile}}
-            mavenOptions: ${{parameters.mavenOptions}}
-            javaHomeOption: ${{parameters.javaHomeOptions}}
-            jdkVersionOption: ${{parameters.jdkVersionOption}}
-            jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
-            publishJUnitResults: ${{parameters.publishJUnitResults}}
-            testResultsFiles: ${{parameters.testResultsFiles}}
-            goals: 'clean'
+          - script: echo testdemo
+        displayName: 'templateTest'
+
+
+#stages:
+#  - stage: clean
+#    jobs:
+#      - job: mvnclean
+#        pool:
+#          vmImage: 'ubuntu-latest'
+#        steps:
+#        - task: Maven@3
+#          inputs:
+#            mavenPomFile: ${{parameters.mavenPomFile}}
+#            mavenOptions: ${{parameters.mavenOptions}}
+#            javaHomeOption: ${{parameters.javaHomeOptions}}
+#            jdkVersionOption: ${{parameters.jdkVersionOption}}
+#            jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
+#            publishJUnitResults: ${{parameters.publishJUnitResults}}
+#            testResultsFiles: ${{parameters.testResultsFiles}}
+#            goals: 'clean'
