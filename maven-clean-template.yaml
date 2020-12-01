@@ -23,13 +23,16 @@ parameters:
     default:  '**/surefire-reports/TEST-*.xml'
 
 
-- task: Maven@3
-  inputs:
-    mavenPomFile: ${{parameters.mavenPomFile}}
-    mavenOptions: ${{parameters.mavenOptions}}
-    javaHomeOption: ${{parameters.javaHomeOptions}}
-    jdkVersionOption: ${{parameters.jdkVersionOption}}
-    jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
-    publishJUnitResults: ${{parameters.publishJUnitResults}}
-    testResultsFiles: ${{parameters.testResultsFiles}}
-    goals: 'clean'
+jobs:
+  - job:
+    steps:
+    - task:
+      inputs:
+        mavenPomFile: ${{parameters.mavenPomFile}}
+        mavenOptions: ${{parameters.mavenOptions}}
+        javaHomeOption: ${{parameters.javaHomeOptions}}
+        jdkVersionOption: ${{parameters.jdkVersionOption}}
+        jdkArchitectureOption: ${{parameters.jdkArchitectureOption}}
+        publishJUnitResults: ${{parameters.publishJUnitResults}}
+        testResultsFiles: ${{parameters.testResultsFiles}}
+        goals: 'clean'
