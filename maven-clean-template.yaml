@@ -21,10 +21,11 @@ parameters:
   - name: testResultsFiles
     type: string
     default:  '**/surefire-reports/TEST-*.xml'
+
 stages:
   - stage: clean
     jobs:
-      - job:
+      - job: mvnclean
         pool:
           vmImage: 'ubuntu-latest'
         steps:
