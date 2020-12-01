@@ -8,7 +8,7 @@ stages:
     jobs:
       - job: build
         steps:
-        - template: maven-clean-template.yaml
-        - template: maven-install-template.yaml
-        - template: maven-package-template.yaml
+  - template: maven-clean-template.yaml
+  - template: maven-install-template.yaml
+  - template: maven-package-template.yaml
 
