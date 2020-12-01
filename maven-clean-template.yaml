@@ -25,7 +25,8 @@ parameters:
 
 
 jobs:
-  - job: mvn clean
+  - job: mvnclean
+    displayName: mvn clean
     steps:
       - task: Maven@3
         inputs:

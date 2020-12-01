@@ -26,7 +26,8 @@ parameters:
     default: 'mvnclean'
 
 jobs:
-  - job: mvn install
+  - job: mvninstall
+    displayName: mvn install
     dependsOn: ${{parameters.dependsOn}}
     steps:
       - task: Maven@3
