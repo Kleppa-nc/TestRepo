@@ -1,8 +1,8 @@
 trigger:
   - master
   - main
-  pool:
-    vmImage: 'ubuntu-latest'
+pool:
+  vmImage: 'ubuntu-latest'
 stages:
   - stage: cleaninstallpack
     jobs:
